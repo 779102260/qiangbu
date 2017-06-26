@@ -11,7 +11,7 @@ module.exports={
 		'./src/index.js',
 	],
 	plugins:[
-        new webpack.optimize.UglifyJsPlugin(), //把合并文件中的注释符号去掉
+        // new webpack.optimize.UglifyJsPlugin(), //把合并文件中的注释符号去掉
         new webpack.HotModuleReplacementPlugin(),
 	    new webpack.NamedModulesPlugin(),
     ],

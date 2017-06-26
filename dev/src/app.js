@@ -36,10 +36,10 @@ class App extends Component{
 					this.state.module==0 && <Introduce />
 				}
 				{
-					this.state.module==1 && <JpShow/>
+					this.state.module==1 && <TypeShow/>
 				}
 				{
-					this.state.module==2 && <TypeShow/>
+					this.state.module==2 && <JpShow/>
 				}
 				{
 					this.state.module==3 && <AboutUs/>

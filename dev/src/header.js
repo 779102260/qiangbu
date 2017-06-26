@@ -15,7 +15,7 @@ function LiTmp(props){
 class Header extends Component{
 	constructor(props){
 		super(props);
-		this.menu=["首页","精品展示","分类展示","关于我们"];
+		this.menu=["首页","分类展示","精品案例","关于我们"];
 		this.state={
 			"selected":0
 		}

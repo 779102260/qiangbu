@@ -278,6 +278,10 @@
 	color: red;
 	display: none;
 }
+.JpShow{
+	margin-top: 40px;
+	overflow: hidden;
+}
 .JpBanner{
 	width: 100%;
 }
