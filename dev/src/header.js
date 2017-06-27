@@ -26,7 +26,6 @@ class Header extends Component{
 		this.setState({
 			"selected":num
 		});
-		console.log(this.props);
 		this.props.module(num);
 	}
 	render(){
