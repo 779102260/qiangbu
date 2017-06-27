@@ -11,10 +11,10 @@ if(!$conn){
 	die("连接失败：" . mysqli_error());
 }
 //选择数据库
-$dbcc=mysqli_select_db($conn,"cc");
+$dbcc=mysqli_select_db($conn,"CC");
 //创建数据库
 if(!$dbcc){
-	$retval=mysqli_query($conn,"CREAT DATABASE cc");
+	$retval=mysqli_query($conn,"CREAT DATABASE CC");
 }
 //创建消信息表
 $tableMessage="CREATE TABLE message( ".
