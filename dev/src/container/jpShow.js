@@ -1,8 +1,8 @@
 import React , {Component} from 'react'
 import JpShowPic from './jpShowPic'
 
-import JpBanner from '../../images/JpShow/jpBanner.jpg'
-import JpItem01 from '../../images/JpShow/jp_item01.jpg'
+// import JpBanner from '../../images/JpShow/jpBanner.jpg'
+// import JpItem01 from '../../images/JpShow/jp_item01.jpg'
 
 function JpItem(props) {
 	let url=props.imgUrl.split(" ")[0];
