@@ -40,7 +40,7 @@
 // $sqlMessage = "INSERT INTO jp ".
 //         "(jp_name,jp_url,submission_date) ".
 //         "VALUES ".
-//         "('恒生阳光城李先生业主墙布案例','/images/jp_item01.jpg','".date("Y-m-d")."')";
+//         "('恒生阳光城李先生业主墙布案例','jp_item01.jpg','".date("Y-m-d")."')";
 // $mResult = mysqli_query( $conn, $sqlMessage );
 // die;
 

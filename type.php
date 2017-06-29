@@ -42,15 +42,17 @@
 //         "VALUES ".
 //         "('丝绢布高温印花墙布系列','/images/shouye3.jpg /images/shouye1.jpg','".date("Y-m-d")."')";
 // $mResult = mysqli_query( $conn, $sqlMessage );
-
-	$sql="SELECT * from type";
-	$retval = mysqli_query( $conn, $sql);
-	$result=array("result"=>true,"data"=>array());
-	while($row = $retval->fetch_assoc()){
-		array_push($result["data"],$row);
-	}
-	echo  json_encode($result);
-
+if($_SERVER['REQUEST_METHOD']=="POST"){
+    $sql="SELECT * from ".$_POST["name"];
+}else{
+    $sql="SELECT * from types";
+}
+$retval = mysqli_query( $conn, $sql);
+$result=array("result"=>true,"data"=>array());
+while($row = $retval->fetch_assoc()){
+	array_push($result["data"],$row);
+}
+echo  json_encode($result);
 
 mysqli_close($conn);
 ?>

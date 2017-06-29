@@ -1,7 +1,7 @@
 import React , {Component} from 'react'
 import JpShowPic from './jpShowPic'
 // import typeBanner from '../../images/JpShow/typeBanner.jpg'
-import JpItem01 from '../../images/JpShow/jp_item01.jpg'
+// import JpItem01 from '../../images/JpShow/jp_item01.jpg'
 
 function JpItem(props) {
 	let url=props.imgUrl.split(" ")[0];
@@ -14,7 +14,7 @@ function JpItem(props) {
 		<div className="jp_item" onClick={clickHander} data-num={props.index}>
 			<div className="jp_item_inner">
 				<dl>
-					<dt className="eg_img"><img src={url}/></dt>
+					<dt className="eg_img"><img src={"./images/"+url}/></dt>
 					<dd className="eg_title">{des}</dd>
 				</dl>
 			</div>
@@ -52,11 +52,31 @@ class TypeShow extends Component{
 	listChick(i){
 		var index=i;
 		var data=this.state.data[index];
-		this.setState({
-			listDetailShow:true,
-			listDetailData:data.type_url.split(" "),
-			listDetailText:data.type_name
+		var oThis=this;
+		$.ajax({
+			url:"/type.php",
+			type:"post",
+			data:{name:data.enname},
+			dataType:"json",
+			success:function(msg) {
+				if(msg.result){
+					var aUrls=msg.data;
+					var aUrl=[];
+					for(var i=0,l=aUrls.length;i<l;i++){
+						aUrl.push(aUrls[i].url);
+					}
+					oThis.setState({
+						listDetailShow:true,
+						listDetailData:aUrl,
+						listDetailText:data.cnname
+					})
+				}
+			},
+			error:function(msg){
+				console.log(2,msg)
+			}
 		})
+		
 	}
 	closeDetail(){
 		this.setState({
@@ -77,7 +97,7 @@ class TypeShow extends Component{
 						{
 							this.state.data.map((value,i)=>{
 								return(
-									<JpItem imgUrl={value.type_url} click={this.listChick} index={i} key={i} des={value.type_name}/>
+									<JpItem imgUrl={value.url} click={this.listChick} index={i} key={i} des={value.cnname}/>
 								)
 							})
 						}

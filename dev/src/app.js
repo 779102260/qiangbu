@@ -1,5 +1,5 @@
 import React , {Component} from 'react'
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 
 import Header from './header'
 import Container from './container'
@@ -49,7 +49,7 @@ class App extends Component{
 		)
 	}
 }
- ReactDOM.render(
- 	<App />,document.getElementById('app')
- )
-// export default App
+ // ReactDOM.render(
+ // 	<App />,document.getElementById('app')
+ // )
+export default App

@@ -26,6 +26,7 @@ class Header extends Component{
 		this.setState({
 			"selected":num
 		});
+		$(".navbar-collapse").removeClass("in");
 		this.props.module(num);
 	}
 	render(){

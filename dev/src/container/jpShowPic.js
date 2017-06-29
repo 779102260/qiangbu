@@ -44,7 +44,7 @@ class JpShowPic extends Component{
 			<div id="picWrap">
 				<span id="prePic" onClick={this.pre}>&lt;</span>
 				<div className="pic">
-					<img className="detail_pic" src={this.images[this.state.image]}/>
+					<img className="detail_pic" src={"./images/"+this.images[this.state.image]}/>
 				</div>
 				<span id="nextPic" onClick={this.next}>&gt;</span>
 			</div>

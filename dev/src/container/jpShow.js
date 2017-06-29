@@ -15,7 +15,7 @@ function JpItem(props) {
 		<div className="jp_item" onClick={clickHander} data-num={props.index}>
 			<div className="jp_item_inner">
 				<dl>
-					<dt className="eg_img"><img src={url}/></dt>
+					<dt className="eg_img"><img src={"images/"+url}/></dt>
 					<dd className="eg_title">{des}</dd>
 				</dl>
 			</div>

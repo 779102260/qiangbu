@@ -4,14 +4,14 @@ const path              =require('path'),
 
 module.exports={
 	entry:[
-		// 'react-hot-loader/patch',
+		'react-hot-loader/patch',
 		// 'webpack-hot-middleware/client?path=http://localhost:9000/__webpack_hmr',
-		// 'webpack-dev-server/client?http://localhost:9000/',
-		// 'webpack/hot/only-dev-server',
-		'./src/app.js',
+		'webpack-dev-server/client?http://localhost:9000/',
+		'webpack/hot/only-dev-server',
+		'./src/index.js',
 	],
 	plugins:[
-        new webpack.optimize.UglifyJsPlugin(), //把合并文件中的注释符号去掉
+        // new webpack.optimize.UglifyJsPlugin(), //把合并文件中的注释符号去掉
         new webpack.HotModuleReplacementPlugin(),
 	    new webpack.NamedModulesPlugin(),
     ],
@@ -30,16 +30,16 @@ module.exports={
 		//css内的 url相对路径 ./相对于html计算
 		publicPath: '/'
 	},
-	// devtool: 'inline-source-map',
-	// devServer: {
-	//     hot: true,
-	//     contentBase:path.resolve(__dirname, '../'),
-	//     publicPath: '/',
-	//     port:9000,
-	//     // proxy:{
+	devtool: 'inline-source-map',
+	devServer: {
+	    hot: true,
+	    contentBase:path.resolve(__dirname, '../'),
+	    publicPath: '/',
+	    port:9000,
+	    // proxy:{
 
-	//     // }
-	// },
+	    // }
+	},
 	// 引用但不打包的文件
   	externals: { 'react': 'React', 'react-dom': 'ReactDOM' ,'jquery':'jQuery'},
 	module:{
