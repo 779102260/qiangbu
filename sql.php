@@ -1,5 +1,5 @@
 <?php 
-
+die;
 $DB_HOST ="localhost:3306";
 $DB_USER ="root";
 $DB_PASSWORD ="talent";
@@ -54,14 +54,18 @@ if(!$dbcc){
 // }
 
 
-
+// 读取分类文件夹文件并存入mysql
 // $arr0=["cixiu","muwen","yinjia","tihua","sijuan","beijing","keting","hunfang","all","types"];
 // for($i=0;$i<count($arr0);$i++){
 //     $delsql="DROP TABLE ".$arr0[$i];
 //     mysqli_query($conn,$delsql);
 // }
 // die;
-//创建所有类表，分类名称
+// 
+// 
+// 
+
+// 创建所有类表，分类名称
 // $typesql="CREATE TABLE IF NOT EXISTS types( ".
 //         "id INT NOT NULL AUTO_INCREMENT, ".
 //         "enname VARCHAR(40), ".

@@ -11,7 +11,8 @@ class Footer extends Component{
 			name:"",
 			email:"",
 			phone:"",
-			message:""
+			message:"",
+			note:""
 		}
 
 		this.inputChange=this.inputChange.bind(this);
@@ -39,15 +40,21 @@ class Footer extends Component{
 				success:function (msg) {
 					msg=JSON.parse(msg);
 					if(msg.result){
-						alert("提交成功，我们会尽快与您联系！")
+						// alert("提交成功，我们会尽快与您联系！")
 						oThis.setState({
 							name:"",
 							email:"",
 							phone:"",
-							message:""
+							message:"",
+							note:"提交成功，我们会尽快与您联系！"
 						})
 					}
 					oThis.phoneReq.style.display="none";
+					setTimeout(function(){
+						oThis.setState({
+							note:""
+						})
+					},2000)
 				}
 			})
 		}
@@ -68,6 +75,7 @@ class Footer extends Component{
 					</p>
 					<p><span className="base_tag">附言：</span><textarea name="message" value={this.state.message} onChange={this.inputChange}/></p>
 					<p className="sbtn"><a id="submitMessage" onClick={this.submitMessage}>提交</a></p>
+					<p className="note">{this.state.note}</p>
 				</div>
 				<div className="us">
 					<div id="phone" className="us_item">

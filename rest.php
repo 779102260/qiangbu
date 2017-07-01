@@ -6,10 +6,11 @@ const DB_PASSWORD = "talent";
 // character-set-server = utf8
 //失败返回false
 $conn=mysqli_connect(DB_HOST,DB_USER,DB_PASSWORD);
-print_r(mysqli_error());
+// print_r(mysqli_error());
 if(!$conn){
 	die("连接失败：" . mysqli_error());
 }
+mysqli_query($conn , "set names utf8");
 //选择数据库
 $dbcc=mysqli_select_db($conn,"CC");
 //创建数据库

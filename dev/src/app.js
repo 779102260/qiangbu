@@ -1,5 +1,5 @@
 import React , {Component} from 'react'
-// import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 
 import Header from './header'
 import Container from './container'
@@ -30,11 +30,14 @@ class App extends Component{
 			<div id="wrapper">
 				<Header module={this.changeMoudle}/>
 				{
-					this.state.module==0 && <Container />
+					this.state.module==0 && 
+					<div>
+						<Container />
+						<Introduce />
+						<TypeShow />
+					</div>
 				}
-				{
-					this.state.module==0 && <Introduce />
-				}
+
 				{
 					this.state.module==1 && <TypeShow/>
 				}
@@ -49,7 +52,7 @@ class App extends Component{
 		)
 	}
 }
- // ReactDOM.render(
- // 	<App />,document.getElementById('app')
- // )
-export default App
+ ReactDOM.render(
+ 	<App />,document.getElementById('app')
+ )
+// export default App

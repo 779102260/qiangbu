@@ -18,7 +18,7 @@ class Introduce extends Component{
 					<p>墙布样本各种花色新潮多样，免费上门看墙布样本量尺寸，设计效果图。墙布样本在我家没有门面开支，没有中间熟人介绍费用，活我自己做。真正的做到与客户面对面，减少了中间利润环节，低于市场价格不花冤枉钱，给客户实实在在的实惠。</p>
 					<p>加微信看更多图片了解详情！现场墙布施工讲解安装墙布注意事项！施工美观技巧！什么样的墙布适合什么样的地方铺贴更美观！关于墙布！墙角处施工！花头高度垂直度！墙布节约问题！底布布料介绍！墙布施工结束专业检查。墙布我们是认真的[拳头]"</p>
 				</div>
-				<div className="part3">
+				{/*<div className="part3">
 					<div id="competive">
 						<a className="competive"></a>
 						<p className="part3Text">精品严选</p>
@@ -32,6 +32,7 @@ class Introduce extends Component{
 						<p className="part3Text">产品多样</p>
 					</div>
 				</div>
+			*/}
 			</div>
 		)
 	}

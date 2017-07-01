@@ -5,7 +5,7 @@ import JpShowPic from './jpShowPic'
 // import JpItem01 from '../../images/JpShow/jp_item01.jpg'
 
 function JpItem(props) {
-	let url=props.imgUrl.split(" ")[0];
+	let url=props.imgUrl.split(",")[0];
 	let des=props.des;
 
 	function clickHander(){
@@ -56,8 +56,8 @@ class JpShow extends Component{
 		var data=this.state.data[index];
 		this.setState({
 			listDetailShow:true,
-			listDetailData:data.jp_url.split(" "),
-			listDetailText:data.jp_name
+			listDetailData:data.jp_url.split(","),
+			listDetailText:data.jp_detail
 		})
 	}
 	closeDetail(){
@@ -79,7 +79,7 @@ class JpShow extends Component{
 						{
 							this.state.data.map((value,i)=>{
 								return(
-									<JpItem imgUrl={value.jp_url} click={this.listChick} index={i} key={i} des={value.jp_name}/>
+									<JpItem imgUrl={value.jp_url} des={value.jp_name} index={i} click={this.listChick}  key={i}/>
 								)
 							})
 						}
