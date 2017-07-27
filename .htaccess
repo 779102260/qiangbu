@@ -1,9 +1,15 @@
 
 RewriteEngine on
+#配和react-router
+#RewriteRule classifiedDisplay$ http://www.yangqingcheng.xin/
+#RewriteRule boutiqueCase$ http://www.yangqingcheng.xin/
+#RewriteRule aboutUs$ http://www.yangqingcheng.xin/
+
 RewriteCond %{HTTP_HOST} ^yangqingcheng\.xin [NC]
 RewriteRule ^(.*)$ http://www.yangqingcheng.xin/$1 [L,R=301,NC]
 
 ErrorDocument 404 /404.html
 
 SetEnvIf Request_URI "/starry-night" allow_framing=true
-Header set X-Frame-Options SAMEORIGIN env=!allow_framing
+#本地出错
+#Header set X-Frame-Options SAMEORIGIN env=!allow_framing

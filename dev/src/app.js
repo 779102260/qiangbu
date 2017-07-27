@@ -1,5 +1,12 @@
 import React , {Component} from 'react'
 import ReactDOM from 'react-dom';
+//如果使用BrowserRouter需要浏览器配合
+//见htaccess
+import {
+	HashRouter as Router,
+    Route,
+    Link
+} from 'react-router-dom'
 
 import Header from './header'
 import Container from './container'
@@ -11,44 +18,30 @@ import AboutUs from './container/AboutUs'
 
 import '../css/header.css'
 
+const Home=()=>(
+	<div>
+		<Container />
+		<Introduce />
+		<TypeShow />
+	</div>
+)
 class App extends Component{
 	constructor(props){
 		super(props);
-		this.state={
-			module:0
-		}
-
-		this.changeMoudle=this.changeMoudle.bind(this);
-	}
-	changeMoudle(module){
-		this.setState({
-			"module":module
-		})
 	}
 	render(){
 		return(
-			<div id="wrapper">
-				<Header module={this.changeMoudle}/>
-				{
-					this.state.module==0 && 
-					<div>
-						<Container />
-						<Introduce />
-						<TypeShow />
-					</div>
-				}
+			<Router>
+				<div id="wrapper">
+					<Header />
+					<Route exact path="/" component={Home}/>
+					<Route exact path="/classifiedDisplay/" component={TypeShow}/>
+					<Route exact path="/boutiqueCase/" component={JpShow}/>
+					<Route exact path="/aboutUs/" component={AboutUs}/>
+					<Footer />
+				</div>
+			</Router>
 
-				{
-					this.state.module==1 && <TypeShow/>
-				}
-				{
-					this.state.module==2 && <JpShow/>
-				}
-				{
-					this.state.module==3 && <AboutUs/>
-				}
-				<Footer />
-			</div>
 		)
 	}
 }

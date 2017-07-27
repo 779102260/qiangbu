@@ -5,10 +5,11 @@ const path              =require('path'),
 module.exports={
 	entry:[
 		// 'react-hot-loader/patch',
-		// 'webpack-hot-middleware/client?path=http://localhost:9000/__webpack_hmr',
 		// 'webpack-dev-server/client?http://localhost:9000/',
 		// 'webpack/hot/only-dev-server',
+		// './src/index.js',
 		'./src/app.js',
+		
 	],
 	plugins:[
         new webpack.optimize.UglifyJsPlugin(), //把合并文件中的注释符号去掉
@@ -41,7 +42,14 @@ module.exports={
 	//     // }
 	// },
 	// 引用但不打包的文件
-  	externals: { 'react': 'React', 'react-dom': 'ReactDOM' ,'jquery':'jQuery'},
+  	externals: { 
+  		'react': 'React', 
+  		'react-dom': 'ReactDOM',
+  		'jQuery':'$',
+  		// 'react-router-dom':'Route',
+  		// 'react-router-dom':'BrowserRouter',
+  		// 'react-router-dom':'Link'
+  	},
 	module:{
 		rules:[{
 			//css处理
